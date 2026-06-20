@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Discover the divine beauty, spiritual heritage, and cultural diversity of Varanasi (Kashi). Explore all 84+ historical ghats, Kashi Vishwanath temple, Sarnath, and experience the sacred Ganga Aarti.">
+  <meta name="keywords"
+    content="Hello Banaras, Varanasi, Kashi, Ghats of Varanasi, Ganga Aarti, Kashi Vishwanath, Sarnath, India Tourism, Spirituality">
+  <meta name="author" content="Antigravity pairs with Saurav">
+
+  <title>Hello Banaras - Official Heritage & Tourism Guide of Varanasi</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Leaflet Map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <!-- Leaflet Map JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Loading Screen Overlay -->
+  <div class="loader-overlay" id="loader-overlay">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">HAR HAR MAHADEV</div>
+  </div>
+
+  <!-- Ambient Glowing Orbs -->
+  <div class="glowing-orb orb-gold"></div>
+  <div class="glowing-orb orb-saffron"></div>
+
+  <!-- Immersive Fixed Header -->
+  <header>
+    <!-- Official Government Top Bar -->
+    <div class="gov-top-bar">
+      <div class="container gov-top-bar-content">
+        <span><i class="fa-solid fa-circle-nodes" style="color: var(--accent-gold);"></i> Tourism & Heritage Portal</span>
+        <div class="gov-top-links">
+          <div id="gov-weather" class="gov-weather-container" style="display: inline-flex; align-items: center; gap: 0.8rem; margin-right: 0.2rem;">
+            <span class="weather-item" id="weather-temp" title="Varanasi Temperature" style="display: flex; align-items: center; gap: 0.3rem;"><i class="fa-solid fa-thermometer-half" style="color: var(--accent-gold);"></i> --°C</span>
+            <span class="weather-item" id="weather-precip" title="Precipitation" style="display: flex; align-items: center; gap: 0.3rem;"><i class="fa-solid fa-cloud-showers-water" style="color: var(--accent-gold);"></i> --mm</span>
+            <span class="weather-item" id="weather-wind" title="Wind Speed" style="display: flex; align-items: center; gap: 0.3rem;"><i class="fa-solid fa-wind" style="color: var(--accent-gold);"></i> -- km/h</span>
+            <span class="weather-item" id="weather-aqi" title="Varanasi Air Quality Index" style="display: flex; align-items: center; gap: 0.3rem;"><i class="fa-solid fa-lungs" style="color: var(--accent-gold);"></i> AQI --</span>
+          </div>
+          <span class="gov-separator">|</span>
+          <!-- <span id="gov-helpline"><i class="fa-solid fa-phone"></i> Tourist Helpline: 1860-180-1364</span> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container navbar">
+      <a href="#" class="logo">
+        <i class="fa-solid fa-dharmachakra" style="color: var(--accent-saffron);"></i>
+        HELLO<span>BANARAS</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#temples">Sacred Shrines</a></li>
+        <li><a href="#gallery">Arts & Crafts</a></li>
+        <li><a href="#ghats">Ghat Register</a></li>
+        <li><a href="#culture">Heritage & Culture</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="audio-control" id="audio-toggle" title="Toggle Maha Mrityunjaya Mantra">
+          <div class="audio-waves" id="visualizer-bars">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <strong>Play Mantra</strong>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Areas -->
+  <main>
+
+    <!-- Hero Banner Section -->
+    <section class="hero" id="home">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+
+      <!-- Floating Diya Particles Container -->
+      <div class="diya-particles" id="diya-particles"></div>
+
+      <div class="hero-content">
+        <p class="hero-tagline">Gateway to the Divine</p>
+        <h1 class="hero-title">
+          <span>Experience the Mystical Soul of</span>
+          BANARAS
+        </h1>
+        <p class="hero-desc">
+          Enter Kashi, the oldest living city on Earth. Lapped by the sacred Ganges, Banaras is a vibrant tapestry of
+          timeless spirituality, cultural diversity, and architectural heritage.
+        </p>
+        <div class="hero-cta">
+          <a href="#ghats" class="btn-gold">
+            Explore 84 Ghats <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Explore Banaras by Theme Section -->
+    <section class="section-padding themes-section" id="themes" style="background-color: var(--bg-secondary); border-bottom: 1px solid var(--glass-border);">
+      <div class="container">
+
+        <div class="text-center">
+          <h2 class="section-title">Explore Banaras by Theme</h2>
+          <p class="section-subtitle" style="margin-bottom: 3rem;">
+            Varanasi offers a multifaceted tapestry of experiences. Choose a theme below to unlock curated guides, top attractions, and immersive local journeys.
+          </p>
+        </div>
+
+        <!-- Interactive Themes Selector Grid -->
+        <div class="themes-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
+          <button class="theme-card active" data-theme="spirituality">
+            <div class="theme-card-img" style="background-image: url('images/hero_ganga_aarti.png');"></div>
+            <div class="theme-overlay"></div>
+            <div class="theme-card-content">
+              <div class="theme-icon"><i class="fa-solid fa-om"></i></div>
+              <h3 class="theme-title">Spirituality & Rituals</h3>
+            </div>
+          </button>
+
+          <button class="theme-card" data-theme="music">
+            <div class="theme-card-img" style="background-image: url('images/banaras_music_theme.png');"></div>
+            <div class="theme-overlay"></div>
+            <div class="theme-card-content">
+              <div class="theme-icon"><i class="fa-solid fa-music"></i></div>
+              <h3 class="theme-title">Classical Music & Arts</h3>
+            </div>
+          </button>
+
+          <button class="theme-card" data-theme="heritage">
+            <div class="theme-card-img" style="background-image: url('images/sarnath.png');"></div>
+            <div class="theme-overlay"></div>
+            <div class="theme-card-content">
+              <div class="theme-icon"><i class="fa-solid fa-book-open-reader"></i></div>
+              <h3 class="theme-title">Heritage & Learning</h3>
+            </div>
+          </button>
+
+          <button class="theme-card" data-theme="crafts">
+            <div class="theme-card-img" style="background-image: url('images/banarasi_silk.png');"></div>
+            <div class="theme-overlay"></div>
+            <div class="theme-card-content">
+              <div class="theme-icon"><i class="fa-solid fa-scissors"></i></div>
+              <h3 class="theme-title">Handlooms & Crafts</h3>
+            </div>
+          </button>
+
+          <button class="theme-card" data-theme="gastronomy">
+            <div class="theme-card-img" style="background-image: url('images/banarasi_paan.png');"></div>
+            <div class="theme-overlay"></div>
+            <div class="theme-card-content">
+              <div class="theme-icon"><i class="fa-solid fa-utensils"></i></div>
+              <h3 class="theme-title">Culinary & Flavors</h3>
+            </div>
+          </button>
+        </div>
+
+        <!-- Dynamic Theme Details Showcase -->
+        <div class="theme-details-panel" id="theme-details-panel">
+          <div class="theme-details-grid">
+            <div class="theme-details-main">
+              <h3 class="theme-details-title" style="color: var(--accent-saffron); font-size: 1.8rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-display);">
+                <i class="fa-solid fa-om"></i> Spirituality & Sacred Rituals
+              </h3>
+              <p class="theme-details-desc" style="font-size: 1rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Varanasi is the spiritual heartbeat of India. Pilgrims travel from all corners of the earth to bathe in the holy Ganges, seek moksha (liberation), and experience the daily rhythm of bells, chants, and brass lamps that has remained unchanged for thousands of years.
+              </p>
+              <div class="theme-action-wrapper" style="display: flex; gap: 1rem;">
+                <a href="#temples" class="btn-gold" style="font-size: 0.85rem; padding: 0.7rem 1.5rem;">Visit Shrines <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#ghats" class="btn-gold" style="background: rgba(11, 34, 64, 0.04); border: 1px solid rgba(11, 34, 64, 0.1); color: var(--text-primary); font-size: 0.85rem; padding: 0.7rem 1.5rem; box-shadow: none;">Explore Ghats <i class="fa-solid fa-water"></i></a>
+              </div>
+            </div>
+            
+            <div class="theme-details-list-sec">
+              <h4 style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.8rem; font-weight: 700; font-family: var(--font-body);">Top Attractions</h4>
+              <ul class="theme-highlights" style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; padding-left: 0;">
+                <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);"><i class="fa-solid fa-circle-check" style="color: var(--accent-gold);"></i> Kashi Vishwanath Temple</li>
+                <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);"><i class="fa-solid fa-circle-check" style="color: var(--accent-gold);"></i> Dashashwamedh Evening Aarti</li>
+                <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);"><i class="fa-solid fa-circle-check" style="color: var(--accent-gold);"></i> Panchtirthi Holy Pilgrimage Path</li>
+              </ul>
+              
+              <h4 style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.8rem; font-weight: 700; font-family: var(--font-body);">Signature Experiences</h4>
+              <ul class="theme-highlights" style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; padding-left: 0;">
+                <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);"><i class="fa-solid fa-star" style="color: var(--accent-saffron); font-size: 0.8rem;"></i> Watch sunrise & Subah-e-Banaras at Assi Ghat</li>
+                <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);"><i class="fa-solid fa-star" style="color: var(--accent-saffron); font-size: 0.8rem;"></i> Early morning boat ride to witness bathing rituals</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Sacred Temples & Landmarks Section -->
+    <section class="section-padding" id="temples">
+      <div class="container">
+
+        <div class="text-center">
+          <h2 class="section-title">Sacred Shrines of Kashi</h2>
+          <p class="section-subtitle">
+            Explore the prominent temples and historical sanctuaries of Varanasi, holding thousands of years of worship,
+            wisdom, and mythological significance. Click on tabs inside cards to check timings and facts!
+          </p>
+        </div>
+
+        <div class="temples-grid">
+
+          <!-- Kashi Vishwanath (Featured Large Card) -->
+          <article class="temple-card large" id="temple-kashi">
+            <div class="temple-img-wrapper">
+              <img src="images/kashi_vishwanath.png" alt="Golden Spires of Kashi Vishwanath Mandir" class="temple-img">
+            </div>
+            <div class="temple-info">
+              <div class="temple-tag">Jyotirlinga</div>
+              <h3 class="temple-name">Kashi Vishwanath Mandir</h3>
+
+              <!-- Tabs Navigation -->
+              <div class="temple-tabs-nav">
+                <button class="tab-trigger active" data-tab="overview">Overview</button>
+                <button class="tab-trigger" data-tab="timings">Aarti Timings</button>
+                <button class="tab-trigger" data-tab="facts">Quick Facts</button>
+              </div>
+
+              <!-- Tabs Content Panels -->
+              <div class="temple-tabs-content">
+                <div class="tab-panel active" data-panel="overview">
+                  <p class="temple-desc">
+                    Known as the Golden Temple, it is dedicated to Lord Shiva (Vishweshwara), the supreme patron deity
+                    of Banaras. It houses one of the twelve sacred Jyotirlingas. Rebuilt in 1780 by Queen Ahilyabai
+                    Holkar of Indore, its majestic domes are plated with over 800 kilograms of pure gold. The temple
+                    stands as a beacon of ultimate liberation (Moksha) and divine light.
+                  </p>
+                </div>
+                <div class="tab-panel" data-panel="timings">
+                  <ul class="timings-list">
+                    <li><span><i class="fa-regular fa-clock"></i> Mangala Aarti:</span> <strong>3:00 AM - 4:00
+                        AM</strong></li>
+                    <li><span><i class="fa-regular fa-clock"></i> Bhog Aarti:</span> <strong>11:15 AM - 12:20
+                        PM</strong></li>
+                    <li><span><i class="fa-regular fa-clock"></i> Sapta Rishi Aarti:</span> <strong>7:00 PM - 8:15
+                        PM</strong></li>
+                    <li><span><i class="fa-regular fa-clock"></i> Shayan Aarti:</span> <strong>10:30 PM - 11:00
+                        PM</strong></li>
+                    <li><span><i class="fa-regular fa-circle-check"></i> General Darshan:</span> <strong>6:00 AM - 9:00
+                        PM</strong></li>
+                  </ul>
+                </div>
+                <div class="tab-panel" data-panel="facts">
+                  <table class="facts-table">
+                    <tr>
+                      <td><strong>Architectural Style</strong></td>
+                      <td>Nagara (Classic North Indian)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Spiritual Sign</strong></td>
+                      <td>One of the 12 Jyotirlingas of Lord Shiva</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Historical Builder</strong></td>
+                      <td>Rani Ahilyabai Holkar of Indore (1780)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Gold Donation</strong></td>
+                      <td>Maharaja Ranjit Singh of Punjab (1000 kg, 1835)</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div class="temple-meta">
+                <span>Importance: <strong>Supreme Spiritual Seat</strong></span>
+                <span>Deity: <strong>Lord Shiva</strong></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Sarnath (Featured Large Card) -->
+          <article class="temple-card large" id="temple-sarnath">
+            <div class="temple-img-wrapper">
+              <img src="images/sarnath.png" alt="Dhamek Stupa at Sarnath" class="temple-img">
+            </div>
+            <div class="temple-info">
+              <div class="temple-tag">Buddhist Sanctuary</div>
+              <h3 class="temple-name">Sarnath Stupa</h3>
+
+              <!-- Tabs Navigation -->
+              <div class="temple-tabs-nav">
+                <button class="tab-trigger active" data-tab="overview">Overview</button>
+                <button class="tab-trigger" data-tab="timings">Visiting Timings</button>
+                <button class="tab-trigger" data-tab="facts">Quick Facts</button>
+              </div>
+
+              <!-- Tabs Content Panels -->
+              <div class="temple-tabs-content">
+                <div class="tab-panel active" data-panel="overview">
+                  <p class="temple-desc">
+                    Located 10 km north of Varanasi, Sarnath is one of the four holiest Buddhist pilgrimage sites. Here,
+                    under the shade of the forest, Gautama Buddha delivered his first sermon (Dharmachakrapravartana) to
+                    his disciples. The monumental Dhamek Stupa stands 43.6 meters tall as a solid cylindrical tower of
+                    stone and brick, representing the birth of the Buddhist Sangha.
+                  </p>
+                </div>
+                <div class="tab-panel" data-panel="timings">
+                  <ul class="timings-list">
+                    <li><span><i class="fa-regular fa-clock"></i> Opening Hours:</span> <strong>6:00 AM - 6:00
+                        PM</strong> (Daily)</li>
+                    <li><span><i class="fa-regular fa-clock"></i> Museum Hours:</span> <strong>9:00 AM - 5:00
+                        PM</strong> (Closed Fridays)</li>
+                    <li><span><i class="fa-regular fa-clock"></i> Best Visit Time:</span> <strong>October to March
+                        (Sunset view)</strong></li>
+                    <li><span><i class="fa-solid fa-ticket"></i> Entry Ticket:</span> <strong>₹25 (Indians), ₹300
+                        (Foreigners)</strong></li>
+                  </ul>
+                </div>
+                <div class="tab-panel" data-panel="facts">
+                  <table class="facts-table">
+                    <tr>
+                      <td><strong>Historical Origin</strong></td>
+                      <td>Built by Emperor Ashoka (approx. 249 BCE)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Key Monument</strong></td>
+                      <td>Dhamek Stupa & Ashoka Lion Capital (National Emblem)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Event</strong></td>
+                      <td>First Sermon (Turning the Wheel of Dharma)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Materials Used</strong></td>
+                      <td>Carved red sandstone and structural bricks</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div class="temple-meta">
+                <span>Importance: <strong>First Sermon of Buddha</strong></span>
+                <span>Type: <strong>Buddhist Heritage</strong></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Sankat Mochan (Standard Card) -->
+          <article class="temple-card" id="temple-sankat">
+            <div class="temple-img-wrapper">
+              <img src="images/sankat_mochan.png" alt="Sankat Mochan Hanuman Temple" class="temple-img">
+            </div>
+            <div class="temple-info">
+              <div class="temple-tag">Devotional Shrine</div>
+              <h3 class="temple-name">Sankat Mochan Mandir</h3>
+
+              <!-- Tabs Navigation -->
+              <div class="temple-tabs-nav">
+                <button class="tab-trigger active" data-tab="overview">Overview</button>
+                <button class="tab-trigger" data-tab="timings">Timings</button>
+                <button class="tab-trigger" data-tab="facts">Facts</button>
+              </div>
+
+              <!-- Tabs Content Panels -->
+              <div class="temple-tabs-content">
+                <div class="tab-panel active" data-panel="overview">
+                  <p class="temple-desc">
+                    Founded by the poet-saint Goswami Tulsidas in the early 16th century, this historic temple is
+                    dedicated to Lord Hanuman. The name 'Sankat Mochan' translates to the 'Reliever of Sorrows and
+                    Obstacles'. Situated along the Assi River bed, the temple is filled with a peaceful, forested vibe
+                    and a large family of monkeys, serving as a peaceful sanctuary of faith.
+                  </p>
+                </div>
+                <div class="tab-panel" data-panel="timings">
+                  <ul class="timings-list">
+                    <li><span><i class="fa-regular fa-clock"></i> Morning Shift:</span> <strong>5:00 AM - 12:00
+                        PM</strong></li>
+                    <li><span><i class="fa-regular fa-clock"></i> Afternoon Pause:</span> <strong>Closed 12:00 PM - 3:00
+                        PM</strong></li>
+                    <li><span><i class="fa-regular fa-clock"></i> Evening Shift:</span> <strong>3:00 PM - 12:00
+                        AM</strong></li>
+                    <li><span><i class="fa-regular fa-clock"></i> Special Days:</span> <strong>Tuesdays & Saturdays
+                        (Huge Crowds)</strong></li>
+                  </ul>
+                </div>
+                <div class="tab-panel" data-panel="facts">
+                  <table class="facts-table">
+                    <tr>
+                      <td><strong>Founder</strong></td>
+                      <td>Sant Goswami Tulsidas (1500s)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Special Sweet</strong></td>
+                      <td>Besan Laddoo (Prasad offered to deity)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Unique Statue</strong></td>
+                      <td>Hanuman facing his lord, Lord Rama</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Music Festival</strong></td>
+                      <td>Sankat Mochan Sangeet Samaroh (Annual)</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div class="temple-meta">
+                <span>Importance: <strong>Removes Obstacles</strong></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tulsi Manas (Standard Card) -->
+          <article class="temple-card" id="temple-tulsi">
+            <div class="temple-img-wrapper">
+              <img src="images/tulsi_manas.png" alt="Tulsi Manas Temple facade" class="temple-img">
+            </div>
+            <div class="temple-info">
+              <div class="temple-tag">Literary Heritage</div>
+              <h3 class="temple-name">Tulsi Manas Mandir</h3>
+
+              <!-- Tabs Navigation -->
+              <div class="temple-tabs-nav">
+                <button class="tab-trigger active" data-tab="overview">Overview</button>
+                <button class="tab-trigger" data-tab="timings">Timings</button>
+                <button class="tab-trigger" data-tab="facts">Facts</button>
+              </div>
+
+              <!-- Tabs Content Panels -->
+              <div class="temple-tabs-content">
+                <div class="tab-panel active" data-panel="overview">
+                  <p class="temple-desc">
+                    Built in 1964 out of pristine white marble, this temple holds immense cultural importance as it
+                    stands on the exact spot where Tulsidas composed the Ramcharitmanas—the Hindi translation of the
+                    Ramayana. The entire epic is beautifully engraved in fine scripts on the marble walls of the temple
+                    temple hall, accompanied by colorful mechanical models of Hindu mythology.
+                  </p>
+                </div>
+                <div class="tab-panel" data-panel="timings">
+                  <ul class="timings-list">
+                    <li><span><i class="fa-regular fa-clock"></i> Daily Timing:</span> <strong>5:30 AM - 12:00
+                        PM</strong></li>
+                    <li><span><i class="fa-regular fa-clock"></i> Afternoon Break:</span> <strong>Closed 12:00 PM - 3:30
+                        PM</strong></li>
+                    <li><span><i class="fa-regular fa-clock"></i> Evening Hours:</span> <strong>3:30 PM - 8:30
+                        PM</strong></li>
+                    <li><span><i class="fa-regular fa-clock"></i> Light Show:</span> <strong>6:00 PM onwards
+                        (Mythological models)</strong></li>
+                  </ul>
+                </div>
+                <div class="tab-panel" data-panel="facts">
+                  <table class="facts-table">
+                    <tr>
+                      <td><strong>Construction Year</strong></td>
+                      <td>1964 (By Thakur Family of Benares)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Materials</strong></td>
+                      <td>White Marble walls and columns</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Artwork</strong></td>
+                      <td>Entire Ramcharitmanas verses engraved</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Exhibition</strong></td>
+                      <td>Puppet show of Rama-Charitra (First Floor)</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div class="temple-meta">
+                <span>Importance: <strong>Origin of Ramcharitmanas</strong></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Markandey Mahadev (Standard Card) -->
+          <article class="temple-card" id="temple-markandey">
+            <div class="temple-img-wrapper">
+              <img src="images/markandey_mahadev.png" alt="Markandey Mahadev Temple" class="temple-img">
+            </div>
+            <div class="temple-info">
+              <div class="temple-tag">Mythological Sangam</div>
+              <h3 class="temple-name">Markandey Mahadev</h3>
+
+              <!-- Tabs Navigation -->
+              <div class="temple-tabs-nav">
+                <button class="tab-trigger active" data-tab="overview">Overview</button>
+                <button class="tab-trigger" data-tab="timings">Timings</button>
+                <button class="tab-trigger" data-tab="facts">Facts</button>
+              </div>
+
+              <!-- Tabs Content Panels -->
+              <div class="temple-tabs-content">
+                <div class="tab-panel active" data-panel="overview">
+                  <p class="temple-desc">
+                    Located 30 km from Varanasi at Kaithi, this highly sacred temple sits at the serene confluence of
+                    the Ganges and Gomati rivers. According to the Puranas, this is where the teenage sage Markandeya
+                    clung to the Shiva Linga to save his life. Lord Shiva appeared to defeat Yamaraj (Death), granting
+                    Markandeya immortality. It is highly visited for health and protection.
+                  </p>
+                </div>
+                <div class="tab-panel" data-panel="timings">
+                  <ul class="timings-list">
+                    <li><span><i class="fa-regular fa-clock"></i> General Entry:</span> <strong>4:00 AM - 10:00
+                        PM</strong></li>
+                    <li><span><i class="fa-regular fa-clock"></i> Special Mondays:</span> <strong>3:00 AM - 11:30
+                        PM</strong></li>
+                    <li><span><i class="fa-regular fa-clock"></i> Shravan month:</span> <strong>Open 24 hours during
+                        festivals</strong></li>
+                    <li><span><i class="fa-regular fa-clock"></i> Pradosh Vrat:</span> <strong>Special Evening Sandhya
+                        Aarti (6:30 PM)</strong></li>
+                  </ul>
+                </div>
+                <div class="tab-panel" data-panel="facts">
+                  <table class="facts-table">
+                    <tr>
+                      <td><strong>Holy Location</strong></td>
+                      <td>Kaithi village, Confluence of Ganga & Gomati</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Reference</strong></td>
+                      <td>Markandeya Purana Chapters</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Key Boon</strong></td>
+                      <td>Mahamrityunjaya protection from untimely death</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Status</strong></td>
+                      <td>Considered spiritual equivalent of Jyotirlinga</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div class="temple-meta">
+                <span>Confluence: <strong>Ganga & Gomati</strong></span>
+              </div>
+            </div>
+          </article>
+
+      </div>
+    </section>
+
+    <!-- Famous Arts, Crafts & Specialities Gallery -->
+    <section class="section-padding gallery-section" id="gallery">
+      <div class="container">
+
+        <div class="text-center">
+          <h2 class="section-title">Arts, Crafts & Specialities</h2>
+          <p class="section-subtitle">
+            Discover the rich heritage and legendary craftsmanship of Banaras, celebrated worldwide for its artistic
+            excellence and cultural legacy. Click cards to explore artisan stories!
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+
+          <!-- Item 1: Banarasi Silk -->
+          <article class="gallery-card" data-craft="silk">
+            <div class="gallery-img-wrapper">
+              <img src="images/banarasi_silk.png" alt="Banarasi Brocade Silk Saree Weaving" class="gallery-img">
+              <div class="gallery-tag">GI Tagged</div>
+            </div>
+            <div class="gallery-info">
+              <h3 class="gallery-card-title">Banarasi Brocade Silk</h3>
+              <p class="gallery-card-desc">The legendary Zari gold-threaded weave representing royal heritage.</p>
+              <button class="btn-gallery">Explore Legacy <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </article>
+
+          <!-- Item 2: Gulabi Meenakari -->
+          <article class="gallery-card" data-craft="meenakari">
+            <div class="gallery-img-wrapper">
+              <img src="images/gulabi_meenakari.png" alt="Gulabi Meenakari Pink Enamelling" class="gallery-img">
+              <div class="gallery-tag">Artisan Craft</div>
+            </div>
+            <div class="gallery-info">
+              <h3 class="gallery-card-title">Gulabi Meenakari</h3>
+              <p class="gallery-card-desc">Rare pink enamelling metalwork dating back to the Persian era.</p>
+              <button class="btn-gallery">Explore Legacy <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </article>
+
+          <!-- Item 3: Wooden Lacquerware -->
+          <article class="gallery-card" data-craft="wooden_toys">
+            <div class="gallery-img-wrapper">
+              <img src="images/wooden_toys.png" alt="Wooden Lacquered Toys" class="gallery-img">
+              <div class="gallery-tag">GI Tagged</div>
+            </div>
+            <div class="gallery-info">
+              <h3 class="gallery-card-title">Wooden Lacquerware & Toys</h3>
+              <p class="gallery-card-desc">Colorful, natural-lacquered wooden toys hand-carved by local artisans.</p>
+              <button class="btn-gallery">Explore Legacy <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </article>
+
+          <!-- Item 4: Banarasi Paan -->
+          <article class="gallery-card" data-craft="paan">
+            <div class="gallery-img-wrapper">
+              <img src="images/banarasi_paan.png" alt="Legendary Banarasi Paan" class="gallery-img">
+              <div class="gallery-tag">Heritage Taste</div>
+            </div>
+            <div class="gallery-info">
+              <h3 class="gallery-card-title">Banarasi Paan</h3>
+              <p class="gallery-card-desc">The iconic prepared betel leaf symbolizing hospitality and royal legacy.</p>
+              <button class="btn-gallery">Explore Legacy <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </article>
+
+          <!-- Item 5: Chunar Stone Carving -->
+          <article class="gallery-card" data-craft="stone_carving">
+            <div class="gallery-img-wrapper">
+              <img src="images/chunar_stone_carving.png" alt="Chunar Sandstone Carving" class="gallery-img">
+              <div class="gallery-tag">Ancient Art</div>
+            </div>
+            <div class="gallery-info">
+              <h3 class="gallery-card-title">Chunar Stone Carving</h3>
+              <p class="gallery-card-desc">Fine sandstone carving seen in Ashoka Pillars and holy temples.</p>
+              <button class="btn-gallery">Explore Legacy <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </article>
+
+          <!-- Item 6: Banarasi Thandai -->
+          <article class="gallery-card" data-craft="thandai">
+            <div class="gallery-img-wrapper">
+              <img src="images/banarasi_thandai.png" alt="Banarasi Thandai & Sweets" class="gallery-img">
+              <div class="gallery-tag">Sacred Elixir</div>
+            </div>
+            <div class="gallery-info">
+              <h3 class="gallery-card-title">Thandai & Sweets</h3>
+              <p class="gallery-card-desc">Holy milk beverages and traditional sweets served in clay kulhads.</p>
+              <button class="btn-gallery">Explore Legacy <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Ghats Explorer Section -->
+    <section class="section-padding" style="background-color: var(--bg-primary);" id="ghats">
+      <div class="container">
+
+        <div class="text-center">
+          <h2 class="section-title">The 84 Ghats of Kashi</h2>
+          <p class="section-subtitle">
+            The soul of Banaras lies along its riverfront. Explore the continuous stretch of stone steps leading to the
+            holy Ganges. Click points on the map timeline to travel along the river path!
+          </p>
+        </div>
+
+        <!-- Pilgrimage Map Guide Timeline -->
+        <div class="pilgrimage-path-container">
+          <h3 class="path-title"><i class="fa-solid fa-map-location-dot"></i> Kashi Riverfront Pilgrimage Path</h3>
+          <p class="path-desc">Click key nodes to see the geographical transition of ghats from South (Assi Confluence)
+            to North (Varuna Confluence).</p>
+          <div class="path-scroller">
+            <div class="path-line"></div>
+            <div class="path-nodes" id="path-nodes">
+              <!-- Rendered dynamically by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard Panel -->
+        <div class="explorer-panel">
+          <div class="search-filter-box">
+
+            <div class="search-wrapper">
+              <i class="fa-solid fa-magnifying-glass search-icon"></i>
+              <input type="text" id="search-ghat" class="search-input" placeholder="Search by name, patron, history...">
+            </div>
+
+            <div class="filter-tags">
+              <button class="filter-btn active" data-filter="all">All Ghats</button>
+              <button class="filter-btn" data-filter="panchtirthi">Panchtirthi</button>
+              <button class="filter-btn" data-filter="cremation">Cremation Sites</button>
+              <button class="filter-btn" data-filter="palace">Royal Palaces</button>
+              <button class="filter-btn" data-filter="historical">Historical</button>
+              <button class="filter-btn" data-filter="bathing">Bathing Ghats</button>
+            </div>
+
+          </div>
+
+          <div class="ghats-stats">
+            Showing <span id="stats-count">85</span> ghats matching your criteria
+          </div>
+        </div>
+
+        <!-- Interactive Ghat Cards Grid -->
+        <div class="ghats-grid" id="ghats-grid">
+          <!-- Dynamic JavaScript rendering here -->
+        </div>
+
+        <!-- Load More controls -->
+        <div class="load-more-container">
+          <button class="btn-load-more" id="btn-load-more">Load More Ghats</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Culture and Aarti split section -->
+    <section class="section-padding heritage-showcase" id="culture">
+      <div class="container">
+
+        <div class="heritage-split">
+
+          <div class="heritage-content">
+            <h2 class="section-title">Spirituality in Motion</h2>
+            <p style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.8;">
+              Banaras is not just a geographical place; it is a spiritual frequency. From the quiet morning hours filled
+              with holy temple chants and bells to the glowing lights of the evening worship, the city pulses with
+              cultural richness.
+            </p>
+
+            <div class="heritage-highlight">
+              <p class="heritage-quote">"Older than history, older than tradition, older even than legend, and looks
+                twice as old as all of them put together."</p>
+              <span style="font-size: 0.85rem; color: var(--accent-gold); font-family: var(--font-display);">- Mark
+                Twain</span>
+            </div>
+
+            <h3 style="font-size: 1.5rem; margin-top: 2rem; margin-bottom: 0.75rem; color: var(--accent-gold);">
+              Subah-e-Banaras</h3>
+            <p style="margin-bottom: 1.5rem;">
+              The morning begins before sunrise at Assi Ghat. The scent of incense spreads as priests perform the
+              morning Aarti, followed by Vedic chants, yoga, and classical morning ragas played on the sitar and
+              shehnai, greeting the sun as it rises over the Ganges.
+            </p>
+
+            <h3 style="font-size: 1.5rem; margin-top: 2rem; margin-bottom: 0.75rem; color: var(--accent-saffron);">Daily
+              Ganga Aarti</h3>
+            <p>
+              As night falls, Dashashwamedh Ghat lights up for the daily Ganga Aarti. Young priests dress in saffron
+              robes and move large brass lamps weighing over 15 kilograms in rhythmic patterns, offering prayers to
+              Mother Ganges. The sound of bells, conch shells, and chanting echoes as thousands of lit clay lamps float
+              on the river under the starlight.
+            </p>
+          </div>
+
+          <div class="heritage-visuals">
+            <div class="heritage-frame frame-1">
+              <img src="images/hero_ganga_aarti.png" alt="Priests performing Ganga Aarti with brass lamps">
+            </div>
+            <div class="heritage-frame frame-2">
+              <img src="images/kashi_vishwanath.png" alt="A visual representation of temple architecture in Kashi">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Interactive Details Modal dialog -->
+  <div class="dialog-backdrop" id="ghat-modal">
+    <div class="dialog-content">
+
+      <!-- Modal Close Button Absolute on top of image -->
+      <button class="dialog-close" id="modal-close" title="Close details"
+        style="position: absolute; top: 1rem; right: 1rem; z-index: 10; background: rgba(11, 11, 14, 0.6); border: 1px solid rgba(255,255,255,0.1); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; cursor: pointer;">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <!-- Ghat Detail Image Header -->
+      <div class="dialog-img-wrapper ghat-dialog-img-wrapper">
+        <img id="modal-img" src="" alt="Ghat Photo" style="width: 100%; height: 100%; object-fit: cover;">
+        <div
+          style="position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 35%, rgba(19, 19, 24, 0.98) 100%);">
+        </div>
+      </div>
+
+      <div class="dialog-header"
+        style="border-bottom: none; padding: 1.5rem 2rem 1rem 2rem; position: relative; z-index: 2;">
+        <div class="dialog-header-info">
+          <span class="dialog-num" id="modal-num">GHAT #0</span>
+          <h3 class="dialog-title" id="modal-title" style="color: var(--accent-blue);">Ghat Name</h3>
+        </div>
+      </div>
+
+      <div class="dialog-body">
+
+        <div class="dialog-field">
+          <div class="dialog-field-title">Renovated/Built By</div>
+          <div class="dialog-field-content patron-text" id="modal-patron">Patron name</div>
+        </div>
+
+        <div class="dialog-field">
+          <div class="dialog-field-title">Category / Type</div>
+          <div class="dialog-field-content" id="modal-category" style="color: var(--accent-gold); font-weight: 500;">
+            Category</div>
+        </div>
+
+        <div class="dialog-field">
+          <div class="dialog-field-title">Historical & Cultural Importance</div>
+          <div class="dialog-field-content" id="modal-desc">Detailed significance of the ghat.</div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Custom Heritage Craft Details Modal -->
+  <div class="dialog-backdrop" id="craft-modal">
+    <div class="dialog-content craft-dialog-content" style="max-width: 750px;">
+
+      <!-- Modal Close Button -->
+      <button class="dialog-close" id="craft-modal-close" title="Close details"
+        style="position: absolute; top: 1rem; right: 1rem; z-index: 10; background: rgba(11, 11, 14, 0.6); border: 1px solid rgba(255,255,255,0.1); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; cursor: pointer;">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <!-- Craft Detail Image Header -->
+      <div class="dialog-img-wrapper craft-dialog-img-wrapper">
+        <img id="craft-modal-img" src="" alt="Craft Photo" style="width: 100%; height: 100%; object-fit: cover;">
+        <div
+          style="position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 30%, rgba(27, 28, 33, 0.98) 100%);">
+        </div>
+      </div>
+
+      <div class="dialog-header"
+        style="border-bottom: none; padding: 1.5rem 2rem 1rem 2rem; position: relative; z-index: 2;">
+        <div class="dialog-header-info">
+          <span class="dialog-num" id="craft-modal-tag"
+            style="background: var(--accent-saffron); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem; font-family: var(--font-display); font-weight: 700; width: fit-content; display: block;">GI
+            Tagged</span>
+          <h3 class="dialog-title" id="craft-modal-title"
+            style="margin-top: 0.5rem; font-size: 2rem; color: var(--accent-blue);">Craft Name</h3>
+        </div>
+      </div>
+
+      <div class="dialog-body" style="padding-top: 0;">
+
+        <!-- Quick Specs Banner Grid -->
+        <div class="craft-specs-grid"
+          style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem; background: var(--bg-primary); padding: 1rem; border-radius: 12px; border: 1px solid var(--glass-border);">
+          <div class="spec-item" style="text-align: center;">
+            <div class="spec-label"
+              style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 0.25rem;">
+              Category</div>
+            <div class="spec-value" id="craft-spec-category"
+              style="font-size: 0.85rem; font-weight: 700; color: var(--accent-blue);">Saree Weaving</div>
+          </div>
+          <div class="spec-item"
+            style="text-align: center; border-left: 1px solid var(--glass-border); border-right: 1px solid var(--glass-border);">
+            <div class="spec-label"
+              style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 0.25rem;">
+              Artisan Centers</div>
+            <div class="spec-value" id="craft-spec-hubs"
+              style="font-size: 0.85rem; font-weight: 700; color: var(--accent-gold);">Madanpura, Peeli Kothi</div>
+          </div>
+          <div class="spec-item" style="text-align: center;">
+            <div class="spec-label"
+              style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 0.25rem;">
+              Production Time</div>
+            <div class="spec-value" id="craft-spec-time"
+              style="font-size: 0.85rem; font-weight: 700; color: var(--accent-saffron);">15 to 180 Days</div>
+          </div>
+        </div>
+
+        <!-- Tabs Navigation -->
+        <div class="temple-tabs-nav" style="margin-bottom: 1.25rem; border-bottom: 1px solid var(--glass-border);">
+          <button class="tab-trigger craft-tab-trigger active" data-craft-tab="legacy"
+            style="font-size: 0.85rem; padding: 0.5rem 1rem;">Legacy & History</button>
+          <button class="tab-trigger craft-tab-trigger" data-craft-tab="process"
+            style="font-size: 0.85rem; padding: 0.5rem 1rem;">Artisan Method</button>
+          <button class="tab-trigger craft-tab-trigger" data-craft-tab="support"
+            style="font-size: 0.85rem; padding: 0.5rem 1rem;">Buy & Support</button>
+        </div>
+
+        <!-- Tabs Panels -->
+        <div class="craft-tabs-content" style="min-height: 180px;">
+
+          <!-- Legacy Panel -->
+          <div class="tab-panel craft-tab-panel active" data-craft-panel="legacy">
+            <p id="craft-desc-legacy" style="font-size: 0.95rem; line-height: 1.7; color: var(--text-secondary);">
+              Detailed heritage lore.
+            </p>
+          </div>
+
+          <!-- Process Panel -->
+          <div class="tab-panel craft-tab-panel" data-craft-panel="process">
+            <div class="process-timeline" id="craft-desc-process"
+              style="display: flex; flex-direction: column; gap: 1.25rem; padding-left: 0.5rem;">
+              <!-- Timelines generated by JS -->
+            </div>
+          </div>
+
+          <!-- Support Panel -->
+          <div class="tab-panel craft-tab-panel" data-craft-panel="support">
+            <div
+              style="background: rgba(207, 69, 0, 0.03); border: 1px dashed rgba(207, 69, 0, 0.3); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+              <h4
+                style="font-size: 0.95rem; color: var(--accent-saffron); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-body); font-weight: 700;">
+                <i class="fa-solid fa-hand-holding-heart"></i> Empower Local Weavers & Artisans
+              </h4>
+              <p style="font-size: 0.85rem; line-height: 1.5; color: var(--text-secondary);">
+                When visiting Varanasi, buy directly from government-certified stores (like UP Handloom, Chowk Urban
+                Haat, or state-run cooperative outlets). Look for the genuine **Handloom Mark** and **GI Logo** to
+                protect the heritage of local craft guilds.
+              </p>
+            </div>
+            <table class="facts-table" id="craft-desc-support" style="margin-top: 0.5rem;">
+              <!-- Outlets and hubs list -->
+            </table>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Fixed Scroll-to-Top Button -->
+  <button class="scroll-top" id="scroll-top" title="Scroll to top of the page">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <h4>HELLO<span>BANARAS</span></h4>
+        <p>
+          Official heritage and pilgrim services gateway for Varanasi (Kashi), managed in collaboration with the
+          Department of Tourism, Government of Uttar Pradesh.
+        </p>
+        <div style="display: flex; gap: 1rem; font-size: 1.2rem; margin-top: 1rem;">
+          <a href="https://www.instagram.com/with_xsaurabh?igsh=MXBxYTI5ZWNjMXVrdQ==" style="color: var(--text-secondary);"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@BaatenAajki" style="color: var(--text-secondary);"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.linkedin.com/in/saurabh-singh-patel-96719b31a" style="color: var(--text-secondary);"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://x.com/Saurabh_S03" style="color: var(--text-secondary);"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links-col">
+        <h5>Official Directory</h5>
+        <ul class="footer-links">
+          <li><a href="#home">Home Portal</a></li>
+          <li><a href="#temples">Temple Shrines</a></li>
+          <li><a href="#gallery">Arts & Crafts</a></li>
+          <li><a href="#ghats">Ghat Register</a></li>
+          <li><a href="#culture">Heritage & Culture</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h5>Government Portals</h5>
+        <ul class="footer-links">
+          <li><a href="https://kashi.gov.in/" target="_blank" rel="noopener">Kashi Administration</a></li>
+          <li><a href="https://varanasismartcity.gov.in/" target="_blank" rel="noopener">Varanasi Smart City</a></li>
+          <li><a href="https://up-tourism.com/" target="_blank" rel="noopener">Uttar Pradesh Tourism</a></li>
+          <li><a href="https://shrikashivishwanath.org/" target="_blank" rel="noopener">Shri Kashi Vishwanath Temple</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <div class="footer-copy">
+        &copy; 2026 Varanasi Tourism, Uttar Pradesh. All Rights Reserved.
+      </div>
+      <div class="footer-citations">
+        A digital initiative for pilgrimage facilitation and cultural preservation.
+      </div>
+      <div class="developer-credit">
+        Developed by <a href="https://saurabh-singh-patel-le5pix8.gamma.site/" target="_blank" rel="noopener">Saurabh Singh Patel</a>
+    </div>
+  </footer>
+
+  <!-- Custom JavaScript behaviors -->
+  <script src="script.js"></script>
+</body>
+
+</html>
